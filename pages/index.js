@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
+import Profile from "../components/Profile";
 
 const HomePage = () => {
   return (
@@ -9,7 +10,9 @@ const HomePage = () => {
         <div className="w-1/4">
           <Sidebar />
         </div>
-        <div className="bg-green-100 w-3/4"> repo</div>
+        <div className="w-3/4 ml-6">
+          <Profile />
+        </div>
       </div>
     </div>
   );
