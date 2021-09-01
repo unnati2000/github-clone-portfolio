@@ -1,7 +1,6 @@
 import { BsBook } from "react-icons/bs";
 import { RiBookMarkFill } from "react-icons/ri";
-import { AiOutlineProject } from "react-icons/ai";
-import { GiEnvelope } from "react-icons/gi";
+import { AiOutlineProject, AiOutlineMail } from "react-icons/ai";
 
 const ProfileNavbar = () => {
   return (
@@ -24,7 +23,7 @@ const ProfileNavbar = () => {
         <p className="text-sm">Projects</p>
       </div>
       <div className="flex items-center text-gray-300 text-sm">
-        <GiEnvelope className="mr-2 text-gray-600" />
+        <AiOutlineMail className="mr-2 text-gray-600" />
         <p className="text-sm">Contact Me</p>
       </div>
     </nav>

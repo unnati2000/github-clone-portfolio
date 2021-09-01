@@ -1,9 +1,6 @@
-import ProfileNavbar from "./ProfileNavbar";
-
 const Profile = () => {
   return (
     <div>
-      <ProfileNavbar />
       <section className="border p-3 rounded border-gray-700 my-6 ">
         <p className="text-gray-300 text-xs mt-4">
           unnati2000 / README.<span className="text-gray-500">md</span>
