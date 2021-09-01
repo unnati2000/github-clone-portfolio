@@ -6,7 +6,7 @@ const HomePage = () => {
   return (
     <div className="bg-[#0d1117] h-screen">
       <Navbar />
-      <div className="container text-gray-100 mx-auto py-10 flex">
+      <div className="container text-gray-100 mx-auto py-10 flex max-h-96">
         <div className="w-1/4">
           <Sidebar />
         </div>
