@@ -9,15 +9,16 @@ import { BsBook } from "react-icons/bs";
 import { RiBookMarkFill } from "react-icons/ri";
 import { AiOutlineProject, AiOutlineMail } from "react-icons/ai";
 
-const HomePage = () => {
+const HomePage = ({ user, repo }) => {
   const [tab, setTab] = useState("profile");
 
+  console.log(user);
   return (
     <div className="bg-[#0d1117] h-screen">
       <Navbar />
       <div className="container text-gray-100 mx-auto py-10 flex max-h-96">
         <div className="w-1/4">
-          <Sidebar />
+          <Sidebar user={user} />
         </div>
         <div className="w-3/4 ml-6">
           <nav className="flex space-x-6 items-center">
@@ -43,8 +44,8 @@ const HomePage = () => {
               <RiBookMarkFill className="mr-2 text-gray-600" />
               <p className="text-sm">
                 Repositories
-                <span class="inline-flex items-center justify-center px-2 py-1 ml-1 mr-2 text-xs font-bold leading-none text-gray-300 bg-gray-700 rounded-full">
-                  28
+                <span className="inline-flex items-center justify-center px-2 py-1 ml-1 mr-2 text-xs font-bold leading-none text-gray-300 bg-gray-700 rounded-full">
+                  {user?.public_repos}
                 </span>
               </p>
             </button>
@@ -64,8 +65,8 @@ const HomePage = () => {
             </button>
           </nav>
 
-          {tab === "profile" && <Profile />}
-          {tab === "repositories" && <Repositoty />}
+          {tab === "profile" && <Profile user={user} />}
+          {tab === "repositories" && <Repositoty repo={repo} />}
           {tab === "projects" && <Project />}
           {tab === "contact-me" && <ContactMe />}
         </div>
@@ -74,4 +75,17 @@ const HomePage = () => {
   );
 };
 
+export async function getStaticProps() {
+  const userRes = await fetch(`https://api.github.com/users/unnati2000`);
+  const user = await userRes.json();
+
+  const repoRes = await fetch(
+    `https://api.github.com/users/unnati2000/repos?sort=created_at&per_page=10`
+  );
+  const repo = await repoRes.json();
+
+  return {
+    props: { user, repo },
+  };
+}
 export default HomePage;
