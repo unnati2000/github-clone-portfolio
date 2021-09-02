@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Homely",
+    "description": "Developed to help people find the best property as per their convenience and help agents to connect on a larger scale.",
+    "image": "",
+    "live": "https://new-project-310316.web.app/",
+    "source": "https://github.com/unnati2000/property-website",
+    "tags": ["react", "firebase", "material-ui", "html", "css"]
+  },
+  {
+    "id": 2,
+    "name": "Healthyways",
+    "description": "Online web portal for ordering healthy and home-cooked meals from local chefs and vendors",
+    "image": "https://imgur.com/J1ZK4yp.png",
+    "live": "https://healthyways.herokuapp.com",
+    "source": "https://github.com/itsnitinr/healthyways",
+    "tags": ["node", "mongodb", "react", "material-ui", "html", "css", "redux"]
+  },
+  {
+    "id": 3,
+    "name": "Food ordering web app",
+    "description": "Build for location like schools, offices and colleges to avoid chaos in the canteen.",
+    "image": "https://i.imgur.com/DKRfYGe.png",
+    "live": "https://canteen-manage-system.herokuapp.com/",
+    "source": "https://github.com/unnati2000/canteen-management",
+    "tags": ["node", "mongodb", "react", "html", "css", "redux"]
+  }
+]

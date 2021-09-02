@@ -1,11 +1,11 @@
 import ProjectCard from "./ProjectCard";
 
-const Project = () => {
+const Project = ({ projects }) => {
   return (
     <div className="flex mt-8 items-center space-x-3">
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
+      {projects?.map((project) => (
+        <ProjectCard project={project} />
+      ))}
     </div>
   );
 };

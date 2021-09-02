@@ -38,7 +38,7 @@ const ContactMe = () => {
         Submit
       </button>
 
-      <div className="flex items-center justify-center my-5">
+      <div className="flex items-center justify-center mt-5">
         <hr></hr>
         <h2 className="text-gray-400 font-semibold text-xl">
           Or Reach Me Out Via
@@ -46,7 +46,7 @@ const ContactMe = () => {
         <hr></hr>
       </div>
 
-      <div className="flex justify-center items-center mt-3 space-x-4 text-center">
+      <div className="flex justify-center items-center mt-6 space-x-4 text-center">
         <SiGmail className="text-gray-500 text-3xl hover:text-gray-400 hover:text-4xl" />
         <AiFillGithub className="text-gray-500 text-3xl hover:text-gray-400 hover:text-4xl" />
         <AiOutlineInstagram className="text-gray-500 text-3xl hover:text-gray-400 hover:text-4xl" />

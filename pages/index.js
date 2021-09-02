@@ -8,11 +8,13 @@ import ContactMe from "../components/ContactMe";
 import { BsBook } from "react-icons/bs";
 import { RiBookMarkFill } from "react-icons/ri";
 import { AiOutlineProject, AiOutlineMail } from "react-icons/ai";
+import { getProjects } from "../pages/api/project";
+import Articles from "../components/Articles";
+import { SiWriteDotAs } from "react-icons/si";
 
-const HomePage = ({ user, repo }) => {
+const HomePage = ({ user, repo, projects, articles }) => {
   const [tab, setTab] = useState("profile");
 
-  console.log(user);
   return (
     <div className="bg-[#0d1117] h-screen">
       <Navbar />
@@ -57,6 +59,13 @@ const HomePage = ({ user, repo }) => {
               <p className="text-sm">Projects</p>
             </button>
             <button
+              onClick={() => setTab("articles")}
+              className="flex items-center text-gray-300 text-sm"
+            >
+              <SiWriteDotAs className="mr-2 text-gray-600" />
+              <p className="text-sm">Articles</p>
+            </button>
+            <button
               onClick={() => setTab("contact-me")}
               className="flex items-center text-gray-300 text-sm"
             >
@@ -64,10 +73,11 @@ const HomePage = ({ user, repo }) => {
               <p className="text-sm">Contact Me</p>
             </button>
           </nav>
-
+          {console.log(articles)}
           {tab === "profile" && <Profile user={user} />}
           {tab === "repositories" && <Repositoty repo={repo} />}
-          {tab === "projects" && <Project />}
+          {tab === "projects" && <Project projects={projects} />}
+          {tab === "articles" && <Articles articles={articles} />}
           {tab === "contact-me" && <ContactMe />}
         </div>
       </div>
@@ -84,8 +94,15 @@ export async function getStaticProps() {
   );
   const repo = await repoRes.json();
 
+  const projects = await getProjects();
+
+  const articleRes = await fetch(
+    "https://dev.to/api/articles?username=commentme"
+  );
+  const articles = await articleRes.json();
+
   return {
-    props: { user, repo },
+    props: { user, repo, projects, articles },
   };
 }
 export default HomePage;
