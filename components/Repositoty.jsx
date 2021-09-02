@@ -10,7 +10,7 @@ const Repositoty = ({ repo }) => {
         <input
           type="text"
           placeholder="Find a repository..."
-          className="bg-[#0d1117] border rounded px-2 text-xs text-gray-600 w-64 h-6 border-gray-800 w-84 hidden md:block"
+          className="bg-[#0d1117] border rounded m-2 px-2 text-xs text-gray-600 w-64 h-6 border-gray-800 w-84 hidden md:block"
         />
       </div>
       {repo?.map((data) => (
@@ -33,7 +33,7 @@ const Repositoty = ({ repo }) => {
               <p className="text-gray-300 text-xs">{data?.watchers_count}</p>
             </div>
           </div>
-          <div className="border-b mt-2 border-gray-900"></div>
+          <div className="border-b mt-2 border-gray-800"></div>
         </div>
       ))}
     </section>

@@ -2,7 +2,7 @@ import ProjectCard from "./ProjectCard";
 
 const Project = ({ projects }) => {
   return (
-    <div className="flex mt-8 items-center space-x-3">
+    <div className="grid grid-cols-3 gap-4 mt-8">
       {projects?.map((project) => (
         <ProjectCard project={project} />
       ))}

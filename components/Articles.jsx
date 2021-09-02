@@ -1,18 +1,19 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const Articles = ({ articles }) => {
   return (
-    <div className="flex flex-wrap space-x-3 mt-6">
+    <div className="grid grid-cols-3 gap-4 mt-8">
       {articles?.map((article) => (
         <div className="rounded border border-gray-700 w-70 mt-3">
-          <img src={article?.cover_image} className="h-64 w-70" />
+          <Image src={article?.cover_image} height="300" width="600" />
           <div className="p-3">
-            <h2 className="text-gray-400 text-lg font-semibold">
+            <h2 className="text-gray-400 text-lg font-semibold leading-5 mb-3">
               {article?.title}
             </h2>
-            <div className="flex items-center text-gray-300 text-xs">
+            <div className="flex flex-wrap items-center text-gray-300 text-xs">
               {article?.tag_list?.map((list) => (
-                <p className="mx-1">#{list}</p>
+                <p className="mr-1">#{list}</p>
               ))}
             </div>
             <p className="text-xs text-gray-500 mt-2">{article?.description}</p>

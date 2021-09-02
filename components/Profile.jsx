@@ -1,3 +1,6 @@
+import GitHubCalendar from "react-github-calendar";
+import Image from "next/image";
+
 const Profile = ({ user }) => {
   return (
     <div>
@@ -15,45 +18,14 @@ const Profile = ({ user }) => {
           full-stack web developer with hands-on experience in the MERN stack.
         </h1>
         <div className="border-b mt-2 border-gray-900"></div>
-        <img
+        <Image
           className="mt-5"
-          src="https://camo.githubusercontent.com/c86d31776e83df685864aff4654095c4ba36442211c9d7802a4884c194c7f804/68747470733a2f2f692e696d6775722e636f6d2f4149536b7745732e706e67"
+          height="220"
+          width="450"
+          src="https://i.imgur.com/AISkwEs.png"
         />
 
-        <p className="flex justify-center items-center  mt-3">
-          <a href="mailto:unnatibamania8@gmail.com" target="_blank">
-            <img
-              height="25"
-              src="https://img.shields.io/badge/gmail-c14438?&style=for-the-badge&logo=gmail&logoColor=white"
-            />
-          </a>
-          <a href="https://linkedin.com/in/unnatibamania" target="_blank">
-            <img
-              height="25"
-              src="https://img.shields.io/badge/-LinkedIn-0e76a8?style=for-the-badge&logo=Linkedin&logoColor=white"
-            />
-          </a>
-          <a href="https://unnati2000.github.io" target="_blank">
-            <img
-              height="25"
-              src="https://img.shields.io/badge/Website-3b5998?style=for-the-badge&logo=google-chrome&logoColor=white"
-            />
-          </a>
-          <a href="https://twitter.com/bamania_unnati" target="_blank">
-            <img
-              height="25"
-              src="https://img.shields.io/badge/-Twitter-00acee?style=for-the-badge&logo=Twitter&logoColor=white"
-            />
-          </a>
-          <a href="https://dev.to/commentme" target="_blank">
-            <img
-              height="27"
-              src="https://img.shields.io/badge/DEV.TO-%230A0A0A.svg?&style=for-the-badge&logo=dev.to&logoColor=white"
-            />
-          </a>
-        </p>
-
-        <h2 className="mt-2 text-xl font-semibold text-gray-300">
+        <h2 className="mt-6 text-xl font-semibold text-gray-300">
           My tech stack
         </h2>
         <div className="flex flex-wrap justify-left items-center mt-3">
@@ -79,7 +51,7 @@ const Profile = ({ user }) => {
           <img src="https://img.shields.io/badge/-VSCode-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white" />
         </div>
 
-        <h2 className="mt-2 text-xl font-semibold text-gray-300">
+        <h2 className="mt-8 text-xl font-semibold text-gray-300">
           Technologies I want to explore
         </h2>
         <div className="flex flex-wrap justify-left items-center mt-3">
@@ -90,10 +62,22 @@ const Profile = ({ user }) => {
         </div>
 
         <img
-          className="mt-3"
+          className="mt-6"
           src="https://github-readme-stats.vercel.app/api?username=unnati2000&&show_icons=true&title_color=ffffff&icon_color=bb2acf&text_color=daf7dc&bg_color=151515"
         />
       </section>
+      <div className="mt-20">
+        <GitHubCalendar
+          username="unnati2000"
+          theme={{
+            level0: "#161B22",
+            level1: "#0e4429",
+            level2: "#006d32",
+            level3: "#26a641",
+            level4: "#39d353",
+          }}
+        />
+      </div>
     </div>
   );
 };

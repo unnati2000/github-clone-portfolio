@@ -1,6 +1,14 @@
 import Image from "next/image";
 import { FiUsers, FiStar } from "react-icons/fi";
 import Link from "next/link";
+import { SiGmail } from "react-icons/si";
+import {
+  AiFillLinkedin,
+  AiOutlineInstagram,
+  AiFillGithub,
+  AiOutlineTwitter,
+  AiFillCodepenCircle,
+} from "react-icons/ai";
 
 const Sidebar = ({ user }) => {
   return (
@@ -35,6 +43,54 @@ const Sidebar = ({ user }) => {
         <p className="text-gray-500 text-xs">
           <span className="text-gray-200">2</span>
         </p>
+      </div>
+
+      <div className="border-b border-gray-600 mt-3"></div>
+
+      <div className="mt-4">
+        <h2 className="text-gray-400 font-semibold text-lg mb-3">
+          Reach Out Via
+        </h2>
+        <div className="flex items-center my-2">
+          <SiGmail className="text-gray-500 text-xl " />
+          <a
+            href="mailto:unnatibamania8@gmail.com"
+            className="text-gray-500 ml-2 text-sm"
+          >
+            unnatibamania8@gmail.com
+          </a>
+        </div>
+        <div className="flex items-center my-2">
+          <AiOutlineInstagram className="text-gray-500 text-xl" />
+          <a
+            href="https://www.instagram.com/unnatibamania/"
+            className="text-gray-500 ml-2 text-sm"
+          >
+            unnatibamania
+          </a>
+        </div>
+
+        <div className="flex items-center my-2">
+          <AiFillLinkedin className="text-gray-500 text-xl" />
+
+          <a
+            href="https://www.linkedin.com/in/unnatibamania/"
+            className="text-gray-500 ml-2 text-sm"
+          >
+            unnatibamania
+          </a>
+        </div>
+
+        <div className="flex text-center items-center my-2">
+          <AiOutlineTwitter className="text-gray-500 text-xl" />
+
+          <a
+            href="https://twitter.com/bamania_unnati"
+            className="text-gray-500 ml-2 text-sm"
+          >
+            bamania_unnati
+          </a>
+        </div>
       </div>
     </aside>
   );

@@ -10,7 +10,7 @@ const Navbar = () => {
         <input
           type="text"
           placeholder="Search or jump to..."
-          className="bg-[#0d1117] border rounded px-2 text-xs text-gray-100 w-64 h-6 border-gray-500 hidden md:block"
+          className="bg-[#0d1117] border focus:w-80 transition-all rounded px-2 text-xs text-gray-100 w-64 h-6 border-gray-500 hidden md:block"
         />
         <div className="ml-4 hidden md:flex items-center text-sm font-semibold text-gray-100 space-x-4">
           <p>Pulls</p>
