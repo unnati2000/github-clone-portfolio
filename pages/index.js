@@ -12,119 +12,127 @@ import { getProjects } from "../pages/api/project";
 import Articles from "../components/Articles";
 import { SiWriteDotAs } from "react-icons/si";
 import Footer from "../components/Footer";
+import Head from "next/head";
 
 const HomePage = ({ user, repo, projects, articles }) => {
   const [tab, setTab] = useState("profile");
 
   return (
-    <div className="bg-[#0d1117] min-h-screen">
-      <Navbar />
-      <div className="container md:flex-nowrap text-gray-100 mx-auto py-10 flex flex-wrap">
-        <div className="md:w-1/4 w-100">
-          <Sidebar user={user} />
+    <>
+      <Head>
+        <title>Unnati Bamania</title>
+      </Head>
+      <div className="bg-[#0d1117] min-h-screen">
+        <Navbar />
+        <div className="container md:flex-nowrap text-gray-100 mx-auto py-10 md:px-16 px-0  flex flex-wrap">
+          <div className="md:w-1/4 w-100">
+            <Sidebar user={user} />
+          </div>
+          <div className="md:3/4 w-100 px-2 md:overflow-hidden">
+            <nav className="flex lg:space-x-6 md:space-x-3 sm:space-x-0 items-center">
+              <div>
+                <button
+                  onClick={() => setTab("profile")}
+                  className="flex items-center px-1 text-gray-300 text-sm"
+                >
+                  <BsBook className="mr-2 text-gray-600 hidden md:block" />
+                  <p className={tab === "profile" && "font-semibold"}>
+                    Overview
+                  </p>
+                </button>
+
+                <div
+                  className={
+                    tab === "profile"
+                      ? "border-b-2 w-100 border-[#f78166] mt-2"
+                      : "border-b-2 w-100 border-transparent mt-2"
+                  }
+                ></div>
+              </div>
+              <div>
+                <button
+                  onClick={() => setTab("repositories")}
+                  className="flex items-center px-1 text-gray-300 text-sm"
+                >
+                  <RiBookMarkFill className="mr-2 text-gray-600 hidden md:block" />
+                  <p className="text-sm">
+                    Repositories
+                    <span className="inline-flex items-center justify-center px-2 py-1 ml-1 mr-2 text-xs font-bold leading-none text-gray-300 bg-gray-700 rounded-full">
+                      {user?.public_repos}
+                    </span>
+                  </p>
+                </button>
+                <div
+                  className={
+                    tab === "repositories"
+                      ? "border-b-2 w-100 border-[#f78166] mt-2"
+                      : "border-b-2 w-100 border-transparent mt-2"
+                  }
+                ></div>
+              </div>
+
+              <div>
+                <button
+                  onClick={() => setTab("projects")}
+                  className="flex items-center px-1 text-gray-300 text-sm"
+                >
+                  <AiOutlineProject className="mr-2 text-gray-600 hidden md:block" />
+                  <p className="text-sm">Projects</p>
+                </button>
+                <div
+                  className={
+                    tab === "projects"
+                      ? "border-b-2 w-100 border-[#f78166] mt-2"
+                      : "border-b-2 w-100 border-transparent mt-2"
+                  }
+                ></div>
+              </div>
+              <div>
+                <button
+                  onClick={() => setTab("articles")}
+                  className="flex items-center text-gray-300 px-1 text-sm"
+                >
+                  <SiWriteDotAs className="mr-2 text-gray-600 hidden md:block" />
+                  <p className="text-sm">Articles</p>
+                </button>
+                <div
+                  className={
+                    tab === "articles"
+                      ? "border-b-2 w-100 border-[#f78166] mt-2"
+                      : "border-b-2 w-100 border-transparent mt-2"
+                  }
+                ></div>
+              </div>
+
+              <div>
+                <button
+                  onClick={() => setTab("contact-me")}
+                  className="flex justify-center items-center px-1 text-gray-300 text-sm"
+                >
+                  <AiOutlineMail className="mr-2 text-gray-600 hidden md:block" />
+                  <p className="text-sm">Contact Me</p>
+                </button>
+                <div
+                  className={
+                    tab === "contact-me"
+                      ? "border-b-2 w-100 border-[#f78166] mt-2"
+                      : "border-b-2 w-100 border-transparent mt-2"
+                  }
+                ></div>
+              </div>
+            </nav>
+
+            {tab === "profile" && <Profile user={user} />}
+            {tab === "repositories" && <Repositoty repo={repo} />}
+            {tab === "projects" && <Project projects={projects} />}
+            {tab === "articles" && <Articles articles={articles} />}
+            {tab === "contact-me" && <ContactMe />}
+          </div>
         </div>
-        <div className="md:3/4 w-100 px-2 md:overflow-hidden">
-          <nav className="flex lg:space-x-6 md:space-x-3 sm:space-x-0 items-center">
-            <div>
-              <button
-                onClick={() => setTab("profile")}
-                className="flex items-center px-1 text-gray-300 text-sm"
-              >
-                <BsBook className="mr-2 text-gray-600 hidden md:block" />
-                <p className={tab === "profile" && "font-semibold"}>Overview</p>
-              </button>
-
-              <div
-                className={
-                  tab === "profile"
-                    ? "border-b-2 w-100 border-[#f78166] mt-2"
-                    : "border-b-2 w-100 border-transparent mt-2"
-                }
-              ></div>
-            </div>
-            <div>
-              <button
-                onClick={() => setTab("repositories")}
-                className="flex items-center px-1 text-gray-300 text-sm"
-              >
-                <RiBookMarkFill className="mr-2 text-gray-600 hidden md:block" />
-                <p className="text-sm">
-                  Repositories
-                  <span className="inline-flex items-center justify-center px-2 py-1 ml-1 mr-2 text-xs font-bold leading-none text-gray-300 bg-gray-700 rounded-full">
-                    {user?.public_repos}
-                  </span>
-                </p>
-              </button>
-              <div
-                className={
-                  tab === "repositories"
-                    ? "border-b-2 w-100 border-[#f78166] mt-2"
-                    : "border-b-2 w-100 border-transparent mt-2"
-                }
-              ></div>
-            </div>
-
-            <div>
-              <button
-                onClick={() => setTab("projects")}
-                className="flex items-center px-1 text-gray-300 text-sm"
-              >
-                <AiOutlineProject className="mr-2 text-gray-600 hidden md:block" />
-                <p className="text-sm">Projects</p>
-              </button>
-              <div
-                className={
-                  tab === "projects"
-                    ? "border-b-2 w-100 border-[#f78166] mt-2"
-                    : "border-b-2 w-100 border-transparent mt-2"
-                }
-              ></div>
-            </div>
-            <div>
-              <button
-                onClick={() => setTab("articles")}
-                className="flex items-center text-gray-300 px-1 text-sm"
-              >
-                <SiWriteDotAs className="mr-2 text-gray-600 hidden md:block" />
-                <p className="text-sm">Articles</p>
-              </button>
-              <div
-                className={
-                  tab === "articles"
-                    ? "border-b-2 w-100 border-[#f78166] mt-2"
-                    : "border-b-2 w-100 border-transparent mt-2"
-                }
-              ></div>
-            </div>
-
-            <div>
-              <button
-                onClick={() => setTab("contact-me")}
-                className="flex justify-center items-center px-1 text-gray-300 text-sm"
-              >
-                <AiOutlineMail className="mr-2 text-gray-600 hidden md:block" />
-                <p className="text-sm">Contact Me</p>
-              </button>
-              <div
-                className={
-                  tab === "contact-me"
-                    ? "border-b-2 w-100 border-[#f78166] mt-2"
-                    : "border-b-2 w-100 border-transparent mt-2"
-                }
-              ></div>
-            </div>
-          </nav>
-
-          {tab === "profile" && <Profile user={user} />}
-          {tab === "repositories" && <Repositoty repo={repo} />}
-          {tab === "projects" && <Project projects={projects} />}
-          {tab === "articles" && <Articles articles={articles} />}
-          {tab === "contact-me" && <ContactMe />}
-        </div>
+        <div className="border-b border-gray-700"></div>
+        <Footer />
       </div>
-      <div className="border-b border-gray-700"></div>
-      <Footer />
-    </div>
+    </>
   );
 };
 
