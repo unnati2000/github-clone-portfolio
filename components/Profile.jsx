@@ -13,7 +13,7 @@ const Profile = ({ user }) => {
           Hi 🙏, my name is Unnati Bamania
         </h1>
         <div className="border-b mt-2 border-gray-900"></div>
-        <h1 className="text-gray-300  text-xs mt-3">
+        <h1 className="text-gray-300  text-sm mt-3">
           I'm a budding engineer specializing in Computer Science 👩‍💻 and also a
           full-stack web developer with hands-on experience in the MERN stack.
         </h1>

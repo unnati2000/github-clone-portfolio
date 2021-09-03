@@ -11,14 +11,14 @@ const Articles = ({ articles }) => {
             <h2 className="text-gray-400 text-lg font-semibold leading-5 mb-3">
               {article?.title}
             </h2>
-            <div className="flex flex-wrap items-center text-gray-300 text-xs">
+            <div className="flex flex-wrap items-center text-gray-300 text-sm">
               {article?.tag_list?.map((list) => (
                 <p className="mr-1">#{list}</p>
               ))}
             </div>
-            <p className="text-xs text-gray-500 mt-2">{article?.description}</p>
+            <p className="text-sm text-gray-500 mt-2">{article?.description}</p>
             <Link href={article?.url}>
-              <button className="bg-gray-800 px-6 mt-3 rounded py-1 text-xs">
+              <button className="bg-gray-800 px-6 mt-3 rounded py-1 text-sm">
                 View
               </button>
             </Link>

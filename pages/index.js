@@ -21,6 +21,7 @@ const HomePage = ({ user, repo, projects, articles }) => {
     <>
       <Head>
         <title>Unnati Bamania</title>
+        <link rel="icon" href="/gravatar.png" />
       </Head>
       <div className="bg-[#0d1117] min-h-screen">
         <Navbar />

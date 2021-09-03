@@ -11,7 +11,7 @@ const ProjectCard = ({ project }) => {
       <h2 className="text-gray-300 font-semibold text-xl px-2 py-2 sm:text-lg">
         {project?.name}
       </h2>
-      <p className="text-gray-600 text-xs px-2">{project?.description}</p>
+      <p className="text-gray-600 text-sm px-2">{project?.description}</p>
 
       <div className="flex items-center px-2 py-2">
         {project?.tags?.map((tag) => (
@@ -20,12 +20,12 @@ const ProjectCard = ({ project }) => {
       </div>
       <div className="flex justify-between items-center m-3">
         <Link href={project?.source}>
-          <button className="bg-[#238636] px-4 mr-2  rounded py-1 text-xs">
+          <button className="bg-[#238636] px-4 mr-2  rounded py-1 text-sm">
             Source
           </button>
         </Link>
         <Link href={project?.live}>
-          <button className="bg-gray-800 px-6  rounded py-1 text-xs">
+          <button className="bg-gray-800 px-6  rounded py-1 text-sm">
             Live
           </button>
         </Link>

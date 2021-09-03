@@ -26,11 +26,13 @@ const ContactMe = () => {
   };
 
   return (
-    <div className="mt-4 p-4 bg-[#161b22] rounded">
+    <div className="mt-4 p-6 bg-[#161b22] rounded">
       <ToastContainer />
-      <h2 className="my-2 text-gray-500 text-2xl font-semibold">Contact Me</h2>
-      <form onSubmit={onSubmit}>
-        <div className="grid grid-flow-col grid-cols-2 gap-3">
+      <form onSubmit={onSubmit} className="px-3 py-5">
+        <h2 className="text-gray-500 text-3xl  my-2 font-semibold">
+          Contact Me
+        </h2>
+        <div className="grid grid-flow-col grid-cols-2 gap-4">
           <input
             type="text"
             placeholder="Name"

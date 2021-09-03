@@ -47,16 +47,16 @@ const Sidebar = ({ user }) => {
 
       <div className="mt-4 flex items-center">
         <FiUsers className="text-gray-400 h-3 w-3 mr-1" />
-        <p className="text-gray-500 text-xs">
+        <p className="text-gray-500 text-sm">
           <span className="text-gray-200">{user?.followers}</span> followers
         </p>
         <p className="text-gray-200 text-xs mx-1">&bull;</p>
-        <p className="text-gray-500 text-xs">
+        <p className="text-gray-500 text-sm">
           <span className="text-gray-200">{user?.following}</span> following
         </p>
         <p className="text-gray-200 text-xs mx-1">&bull;</p>
         <FiStar className="text-gray-400 h-3 w-3 mr-1" />
-        <p className="text-gray-500 text-xs">
+        <p className="text-gray-500 text-sm">
           <span className="text-gray-200">2</span>
         </p>
       </div>
