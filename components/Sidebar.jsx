@@ -7,19 +7,30 @@ import {
   AiOutlineInstagram,
   AiFillGithub,
   AiOutlineTwitter,
-  AiFillCodepenCircle,
 } from "react-icons/ai";
 
 const Sidebar = ({ user }) => {
   return (
     <aside className="flex flex-col p-2">
       <div className="md:block flex justify-between items-center px-2">
-        <Image
-          src="https://github.com/unnati2000.png"
-          height="250"
-          width="250"
-          className="rounded-full"
-        />
+        <div className="hidden md:block">
+          <Image
+            src="https://github.com/unnati2000.png"
+            height="250"
+            width="250"
+            className="rounded-full"
+          />
+        </div>
+
+        <div className="block md:hidden">
+          <Image
+            src="https://github.com/unnati2000.png"
+            height="100"
+            width="100"
+            className="rounded-full"
+          />
+        </div>
+
         <div className="px-2">
           <h1 className="mt-4 text-2xl font-semibold text-gray-300">
             {user?.name}
@@ -94,6 +105,17 @@ const Sidebar = ({ user }) => {
             className="text-gray-500 ml-2 text-sm"
           >
             bamania_unnati
+          </a>
+        </div>
+
+        <div className="flex text-center items-center my-2">
+          <AiFillGithub className="text-gray-500 text-xl" />
+
+          <a
+            href="https://github.com/unnati2000"
+            className="text-gray-500 ml-2 text-sm"
+          >
+            unnati2000
           </a>
         </div>
       </div>

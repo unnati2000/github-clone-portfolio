@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Articles = ({ articles }) => {
   return (
-    <div className="grid grid-cols-3 gap-4 mt-8">
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mt-8">
       {articles?.map((article) => (
         <div className="rounded border border-gray-700 w-70 mt-3">
           <Image src={article?.cover_image} height="300" width="600" />

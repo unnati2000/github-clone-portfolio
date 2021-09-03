@@ -19,7 +19,7 @@ const Profile = ({ user }) => {
         </h1>
         <div className="border-b mt-2 border-gray-900"></div>
         <Image
-          className="mt-5"
+          className="mt-5 hidden md:block"
           height="220"
           width="450"
           src="https://i.imgur.com/AISkwEs.png"
@@ -89,6 +89,9 @@ const Profile = ({ user }) => {
             level3: "#26a641",
             level4: "#39d353",
           }}
+          blockMargin={0}
+          blockSize={7}
+          blockRadius={0}
         />
       </div>
     </div>

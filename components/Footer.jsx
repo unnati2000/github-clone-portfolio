@@ -2,7 +2,7 @@ import { AiFillGithub } from "react-icons/ai";
 
 const Footer = () => {
   return (
-    <div className="flex  items-center justify-evenly text-xs text-[#59A6FF] py-8">
+    <div className="flex flex-wrap items-center space-x-1 space-y-2 justify-evenly text-xs text-[#59A6FF] py-8">
       <p className="text-gray-500 text-xs">© 2021 GitHub, Inc.</p>
       <a href="">Terms</a>
       <a href="">Privacy</a>
@@ -10,7 +10,7 @@ const Footer = () => {
       <a href="">Status</a>
       <a href="">Docs</a>
 
-      <AiFillGithub className="text-2xl text-gray-600" />
+      <AiFillGithub className="text-2xl text-gray-600 hidden md:block" />
 
       <a href="">Contact Github</a>
       <a href="">Pricing</a>
