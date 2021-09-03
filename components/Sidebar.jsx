@@ -13,20 +13,25 @@ import {
 const Sidebar = ({ user }) => {
   return (
     <aside className="flex flex-col p-2">
-      <Image
-        src="https://github.com/unnati2000.png"
-        height="250"
-        width="250"
-        className="rounded-full"
-      />
-      <h1 className="mt-4 text-2xl font-semibold text-gray-300">
-        {user?.name}
-      </h1>
-      <Link href={user?.html_url}>
-        <h4 className="text-gray-400 font-thin text-lg leading-4">
-          {user?.login}
-        </h4>
-      </Link>
+      <div className="md:block flex justify-between items-center px-2">
+        <Image
+          src="https://github.com/unnati2000.png"
+          height="250"
+          width="250"
+          className="rounded-full"
+        />
+        <div className="px-2">
+          <h1 className="mt-4 text-2xl font-semibold text-gray-300">
+            {user?.name}
+          </h1>
+          <Link href={user?.html_url}>
+            <h4 className="text-gray-400 font-thin text-lg leading-4">
+              {user?.login}
+            </h4>
+          </Link>
+        </div>
+      </div>
+
       <p className="mt-4 text-gray-300 text-sm">{user?.bio}</p>
 
       <div className="mt-4 flex items-center">

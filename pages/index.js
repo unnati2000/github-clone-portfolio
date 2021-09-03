@@ -23,8 +23,8 @@ const HomePage = ({ user, repo, projects, articles }) => {
         <div className="md:w-1/4 w-100">
           <Sidebar user={user} />
         </div>
-        <div className="md:3/4 w-100 px-2">
-          <nav className="flex lg:space-x-6 md:space-x-3  items-center">
+        <div className="md:3/4 w-100 px-2 md:overflow-hidden">
+          <nav className="flex lg:space-x-6 md:space-x-3 sm:space-x-1 items-center">
             <div>
               <button
                 onClick={() => setTab("profile")}

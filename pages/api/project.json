@@ -25,23 +25,5 @@
     "live": "https://canteen-manage-system.herokuapp.com/",
     "source": "https://github.com/unnati2000/canteen-management",
     "tags": ["node", "mongodb", "react", "html", "css", "redux"]
-  },
-  {
-    "id": 3,
-    "name": "Food ordering web app",
-    "description": "Build for location like schools, offices and colleges to avoid chaos in the canteen.",
-    "image": "https://i.imgur.com/DKRfYGe.png",
-    "live": "https://canteen-manage-system.herokuapp.com/",
-    "source": "https://github.com/unnati2000/canteen-management",
-    "tags": ["node", "mongodb", "react", "html", "css", "redux"]
-  },
-  {
-    "id": 3,
-    "name": "Food ordering web app",
-    "description": "Build for location like schools, offices and colleges to avoid chaos in the canteen.",
-    "image": "https://i.imgur.com/DKRfYGe.png",
-    "live": "https://canteen-manage-system.herokuapp.com/",
-    "source": "https://github.com/unnati2000/canteen-management",
-    "tags": ["node", "mongodb", "react", "html", "css", "redux"]
   }
 ]

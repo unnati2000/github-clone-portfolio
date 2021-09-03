@@ -66,7 +66,20 @@ const Profile = ({ user }) => {
           src="https://github-readme-stats.vercel.app/api?username=unnati2000&&show_icons=true&title_color=ffffff&icon_color=bb2acf&text_color=daf7dc&bg_color=151515"
         />
       </section>
-      <div className="mt-20">
+      <div className="mt-20 hidden md:block">
+        <GitHubCalendar
+          username="unnati2000"
+          theme={{
+            level0: "#161B22",
+            level1: "#0e4429",
+            level2: "#006d32",
+            level3: "#26a641",
+            level4: "#39d353",
+          }}
+        />
+      </div>
+
+      <div className="mt-20 block md:hidden">
         <GitHubCalendar
           username="unnati2000"
           theme={{
