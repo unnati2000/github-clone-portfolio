@@ -1,4 +1,4 @@
-# Github Clone Portfolio Website
+# Github Dark Clone Portfolio Website
 
 Tech Stack used:
 * NextJS
